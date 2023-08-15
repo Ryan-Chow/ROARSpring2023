@@ -10,7 +10,7 @@ from typing import Tuple
 from prettytable import PrettyTable
 from ROAR.agent_module.michael_pid_agent import PIDAgent
 from ROAR.agent_module.pid_fast_agent import PIDFastAgent
-#from ROAR.agent_module.special_agents.waypoint_generating_agent import WaypointGeneratigAgent
+from ROAR.agent_module.special_agents.waypoint_generating_agent import WaypointGeneratigAgent
 
 
 def compute_score(carla_runner: CarlaRunner) -> Tuple[float, int, int]:
@@ -81,7 +81,7 @@ def suppress_warnings():
 
 def main():
     suppress_warnings()
-    agent_class = PIDFastAgent
+    agent_class = PIDAgent
     num_trials = 1
     total_score_array = []
     num_laps = 1

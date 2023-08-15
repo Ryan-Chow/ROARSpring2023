@@ -18,7 +18,7 @@ class WaypointGeneratigAgent(Agent):
                  vehicle: Vehicle) -> VehicleControl:
         super(WaypointGeneratigAgent, self).run_step(sensors_data=sensors_data,
                                                      vehicle=vehicle)
-        if self.time_counter % 5 == 0: # recorded every second -- could be changed --   ---   self.time_counter > 1
+        if self.time_counter % 10 == 0: # recorded every second -- could be changed --   ---   self.time_counter > 1
             print(f"Writing to [{self.output_file_path}]: {self.vehicle.transform}")
             self.output_file.write(self.vehicle.transform.record() + "\n")
         return VehicleControl()
